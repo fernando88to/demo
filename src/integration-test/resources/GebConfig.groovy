@@ -1,8 +1,17 @@
+//file:noinspection CompileStatic
+//file:noinspection GrUnresolvedAccess
+//file:noinspection UnnecessaryGString
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.safari.SafariDriver
+
+driver = {  // Default driver configuration
+    FirefoxOptions options = new FirefoxOptions()
+    options.setBinary("/usr/bin/firefox")  // Especifique o caminho do executável do Firefox aqui
+    new FirefoxDriver(options)
+}
 
 environments {
 
@@ -36,6 +45,7 @@ environments {
 
     // run via “./gradlew -Dgeb.env=firefox iT”
     firefox {
-        driver = { new FirefoxDriver() }
+        // Esta configuração será usada quando o ambiente 'firefox' for especificado.
+        // Se você deseja a mesma configuração que o padrão, você pode omitir este bloco.
     }
 }
