@@ -1,4 +1,5 @@
 package com.example
+
 import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
 
@@ -12,11 +13,11 @@ import geb.spock.*
 class DemoSpec extends GebSpec {
 
     void "test something"() {
-        when:"The home page is visited"
-            go '/app'
+        when: "The home page is visited"
+        go '/app'
 
-        then:"The title is correct"
-            title == "Welcome to Grails"
+        then: "The title is correct"
+        title == "Welcome to Grails"
     }
 
 }
